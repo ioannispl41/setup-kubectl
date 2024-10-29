@@ -57,6 +57,7 @@ export async function downloadKubectl(version: string): Promise<string> {
          kubectlDownloadPath = await toolCache.downloadTool(
             getkubectlDownloadURL(version, arch)
          )
+         throw new Error(`Debug: kubectl download path is ${kubectlDownloadPath}`);
       } catch (exception) {
          if (
             exception instanceof toolCache.HTTPError &&
